@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         ListView list = (ListView) findViewById(android.R.id.list);
         list.setAdapter(cursorAdapter);
 
-        list.setOnClickListener(new AdapterView.OnItemClickListener(){
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent, EDITOR_REQUEST_CODE);
             }
         });
-
 
         getLoaderManager().initLoader(0, null, this);
 
